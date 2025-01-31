@@ -5,10 +5,8 @@ pico_sdk_init()
 
 add_definitions(-DLIB_PICO_STDIO_UART
 
-                -DPICO_DEFAULT_UART_TX_PIN=0 
-
-                -DPICO_DEFAULT_UART_RX_PIN=1
-
+#                -DPICO_DEFAULT_UART_TX_PIN=0 
+#                -DPICO_DEFAULT_UART_RX_PIN=1
 				-DPICO_DEFAULT_UART_BAUD_RATE=9600)
 
 add_executable(picodemo main.c)
