@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> { } }:
 let
-  #local-pico-sdk = pkgs.pico-sdk.override { withSubmodules = true; };
-  local-pico-sdk = pkgs.pico-sdk;
+  local-pico-sdk = pkgs.pico-sdk.override { withSubmodules = true; };
+  #local-pico-sdk = pkgs.pico-sdk;
 in pkgs.mkShell {
   shellHook = ''
     export PICO_SDK_PATH=${local-pico-sdk}/lib/pico-sdk/
@@ -10,6 +10,7 @@ in pkgs.mkShell {
     gcc-arm-embedded
     protobuf
     cmake
+    openocd-rp2040
     local-pico-sdk
   ];
 }

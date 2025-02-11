@@ -67,3 +67,10 @@ This project demonstrates how to print "Hello, World!" to UART0 on a Raspberry P
 ## Running the Demo
 
 Once the Pico reboots, it will start printing "Hello, World!" to UART0 every second. You can use a serial monitor (e.g., `minicom`, `screen`, or the Arduino IDE's Serial Monitor) to view the output.
+
+
+## debug with openocd
+```
+sudo openocd -f interface/cmsis-dap.cfg -f target/rp2040.cfg -c "adapter speed 5000" -c
+"program picodemo.elf verify reset exit"
+```
